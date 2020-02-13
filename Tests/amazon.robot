@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation  This is a test suite that tests the Amazon site
 Library  SeleniumLibrary
+Resource  ..//Resources/keywords.robot
 Test Setup  Begin Web Test
 Test Teardown  End Web Test
 
@@ -9,36 +10,6 @@ Test Teardown  End Web Test
 ${BROWSER} =  chrome
 ${URL} =  http://www.amazon.com
 
-*** Keywords ***
-Begin Web Test
-        Open Browser                about:blank  ${BROWSER}
-Go to Web Page
-        Load Page
-        Verify Page Loaded
-
-Load Page
-        Go To                       ${URL}
-Verify Page Loaded
-        Wait Until Page Contains    Your Amazon.com
-
-Search for Product
-        [Arguments]                 ${search_term}  ${search_results}
-        Enter Search Term           ${search_term}
-        Submit Search
-        Verify Search Completed     ${search_results}
-
-Enter Search Term
-        [Arguments]                 ${search_term}
-        Input Text                  id:twotabsearchtextbox  ${search_term}
-
-Submit Search
-        Click Button                xpath://*[@id="nav-search"]/form/div[2]/div/input
-
-Verify Search Completed
-        [Arguments]                 ${search_results}
-        Wait Until Page Contains    ${search_results}
-End Web Test
-        Close Browser
 
 *** Test Cases ***
 User can access Amazon.com
