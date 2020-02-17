@@ -17,5 +17,5 @@ User can access Amazon.com
         [Documentation]             Test for accessing website Amazon.com
         [Tags]                      Access Test
         Go to Web Page
-        Search for Product          audi r8  results for "audi r8"
+        Search for Product          audi r8 model car  results for "audi r8 model car"
         Add Item

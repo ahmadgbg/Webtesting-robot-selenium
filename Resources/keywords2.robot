@@ -38,8 +38,8 @@ Add Item
         Verify Item inside Cart
 
 Enter Item
-        ${ITEM_TEXT} =               Get Text   xpath://*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]/div[1]/div/span/div/div/div[2]/h2/a/span
-        Click Element                xpath://*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]/div[1]/div/span/div/div/div[2]/h2/a/span
+        Wait Until Page Contains Element    xpath://*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]/div[1]/div/span/div/div/div/div/div[2]/h2/a/span
+        Click Element                xpath://*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]/div[1]/div/span/div/div/div/div/div[2]/h2/a/span
 Add Item to Cart
         Wait Until Page Contains Element    id:add-to-cart-button
         Click Element                id:add-to-cart-button
